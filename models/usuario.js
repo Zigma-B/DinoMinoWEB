@@ -6,6 +6,23 @@ const UsuarioSchema = Schema({
         type: String,
         required: [true, 'El nombre es obligatorio']
     },
+    apePaterno:{
+        type:String,
+        required: [true, 'El apellido paterno es obligatorio']
+    },
+    apeMaterno:{
+        type:String,
+        required: [true, 'El apellido materno es obligatorio']
+    },
+    fNacimiento:{
+        type:String,
+        required: [true, 'la fecha es obligatoria']
+    },
+    genero:{
+        type:Boolean,
+        require: [true, 'Es necesario el genero'],
+        enum:['Femenino','Masculino']
+    },
     correo: {
         type: String,
         required: [true, 'El correo es obligatorio'],
@@ -15,22 +32,19 @@ const UsuarioSchema = Schema({
         type: String,
         required: [true, 'La contraseña es obligatoria'],
     },
-    img: {
-        type: String,
-    },
-    rol: {
-        type: String,
-        required: true,
-        emun: ['ADMIN_ROLE', 'USER_ROLE']
-    },
     estado: {
         type: Boolean,
         default: true
     },
-    google: {
-        type: Boolean,
-        default: false
-    },
+    datos:[{
+        tiempo:{
+            type:String
+        },
+        score:{
+            type:String
+        }
+         }]
+    
 });
 
 
