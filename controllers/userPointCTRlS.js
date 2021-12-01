@@ -1,11 +1,19 @@
+const {request, response} = require('express');
 
-const userPointGet = (req,res)=>{
+const Usuario = require('../models/usuario');
+
+const userPointGet = async(req=request,res=response)=>{
+  
+    const[usuario] = await Promise.all([
+        Usuario.find()
+    ]); 
     res.json({
-        msg:'working get'
-    });
-
+        usuario
+    })
     
 }
+
+
 
 
 module.exports={

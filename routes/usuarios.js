@@ -14,7 +14,7 @@ const { esRoleValido, emailExiste, existeUsuarioPorId } = require('../helpers/db
 
 const { usuariosGet,
         usuariosPut,
-        usuariosPost,
+        crearUsuarioPost,
         usuariosDelete,
         usuariosPatch } = require('../controllers/usuarios');
 
@@ -36,14 +36,11 @@ router.post('/',[
     check('correo', 'El correo no es válido').isEmail(),
     check('correo').custom( emailExiste ),
     //check('rol', 'No es un rol válido').isIn(['ADMIN_ROLE','USER_ROLE']),
-    check('rol').custom( esRoleValido ), 
-    validarCampos
-], usuariosPost );
+], crearUsuarioPost );
 
 router.delete('/:id',[
     validarJWT,
     // esAdminRole,
-    tieneRole('ADMIN_ROLE', 'VENTAR_ROLE','OTRO_ROLE'),
     check('id', 'No es un ID válido').isMongoId(),
     check('id').custom( existeUsuarioPorId ),
     validarCampos

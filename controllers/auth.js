@@ -8,15 +8,15 @@ const { generarJWT } = require('../helpers/generar-jwt');
 
 const login = async(req, res = response) => {
 
-    const { correo, password } = req.body;
+    const { user, password } = req.body;
 
     try {
       
         // Verificar si el email existe
-        const usuario = await Usuario.findOne({ correo });
+        const usuario = await Usuario.findOne({ user });
         if ( !usuario ) {
             return res.status(400).json({
-                msg: 'Usuario / Password no son correctos - correo'
+                msg: 'Usuario / Password no son correctos - user'
             });
         }
 
