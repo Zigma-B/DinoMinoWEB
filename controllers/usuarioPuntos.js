@@ -7,7 +7,10 @@ const userPointGet = async(req=request,res=response)=>{
     const[usuario] = await Promise.all([
         Usuario.find()
     ]); 
-    res.redirect('home.html', console.log(usuario))
+    res.json({
+    usuario
+    });
+    //res.redirect('home.html', console.log(usuario))
     
 }
 

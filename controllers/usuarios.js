@@ -26,8 +26,8 @@ const usuariosGet = async(req = request, res = response) => {
 
 const usuariosPost = async(req, res = response) => {
     
-    const {nombre, apePaterno, apeMaterno, genero, fNacimiento,correo, password } = req.body;
-    const usuario = new Usuario({ nombre, apePaterno, apeMaterno, genero, fNacimiento,correo, password });
+    const {nombre, apePaterno, apeMaterno, genero, fNacimiento,correo, password, score=0, tiempo=0 } = req.body;
+    const usuario = new Usuario({ nombre, apePaterno, apeMaterno, genero, fNacimiento,correo, password, score,tiempo });
     console.log(usuario);
     // Encriptar la contraseña
     const salt = bcryptjs.genSaltSync();

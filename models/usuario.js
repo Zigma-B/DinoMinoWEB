@@ -36,14 +36,13 @@ const UsuarioSchema = Schema({
         type: Boolean,
         default: true
     },
-    datos:[{
-        tiempo:{
-            type:String
-        },
-        score:{
-            type:String
-        }
-         }]
+    tiempo:{
+        type:Number
+    },
+    score:{
+        type:Number
+    }
+
     
 });
 

@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
-
     <div class="login-page">
         <center> 
         <img src="assets/img/logoVersion2.png" width="50%" height="50%">
@@ -32,9 +30,9 @@
           </form>
 
           <form class="login-form" action="/api/auth/login" method="post">
-            <input type="email" name="correo" id="Lcorreo" placeholder="Correo"/>
-            <input type="password" name="password" id="LPassword"  placeholder="password"/>
-            <button type="submit" id="logIn">login</button>
+            <input type="email" name="correo" id="Lcorreo" placeholder="Correo" required/>
+            <input type="password" name="password" id="Lpassword"  placeholder="password" required/>
+            <button type="button" id="logIn">login</button>
             <p class="message">Not registered? <a href="#">Create an account</a></p>
           </form>
 

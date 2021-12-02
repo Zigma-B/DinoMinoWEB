@@ -1,55 +1,51 @@
-let correo = $('#Lcorreo');
-let password = $('#LPassword');
-
-console.log(password.val());
-console.log(correo.val());
 
 $(function(){
     
-    $(document).on('submit', '#logIn', function (evt) {
+    $(document).on('click', '#logIn', function (evt) {
         evt.preventDefault();
-        
-        $('#login-form').validate({
-            rules:{
-                correo:{
-                    required: true,
-                    email:true
-                },
-                password:{
-                    required:true
-                }
-            },
-            messages:{
-                correo:{
-                    required:"Llena este campo",
-                    email:"Ingrese un correo valido"
-                },password:{
-                    required:"Llena este campo",
-                    email:"No es un correo valido"
-                }
-            }
-        });
-
-        if($('#login-form').valid()) {
            $.ajax({
             url:'/api/auth/login',
             method:'post',
             data: JSON.stringify({
                 correo:$('#Lcorreo').val(),
-                contrasena:$('#LPassword').val() 
+                password:$('#Lpassword').val() 
             }),
             dataType:'json',
             contentType:'application/json',
             success:function(res){
                console.log(res);
-               if(res.t){
-                   window.location='/home';
+               if(res){
+                   window.location='/home.html';
                }
-            },
-            error: function (err) {
-                console.log(err.responseJSON.errors);
-            }
-        });
-        }else{console.log(false);}
+             },
+        }).fail(function(err) {
+            if(err.responseJSON.errors){
+                for (const key in err.responseJSON.errors) {
+                    
+                        const element = err.responseJSON.errors[key];
+                        alert(element.msg)
+                        
+                }
+            }else if (err.responseJSON.errors=== undefined) {
+                alert('usuario o contraseña incorrecto')
+            }else{
+                alert('no es un correo valido')
+            } 
+          });/*
+        $.ajax({
+            method: "POST",
+            url: "/api/auth/login",
+            data: JSON.stringify({
+                correo:$('#Lcorreo').val(),
+                contrasena:$('#LPassword').val() 
+            })
+          }).done(function(data) {
+
+            alert(data); // imprimimos la respuesta
+          }).fail(function() {
+            alert("Algo salió mal");
+          });*/
     });
+
+    
 });
