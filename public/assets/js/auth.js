@@ -1,6 +1,19 @@
 
+if ( navigator.serviceWorker ) {
+    navigator.serviceWorker.register('/sw.js')//se hace el registro del serviceWorker
+    .then(reg=>{//promesa de instalación 
+        //Mostrar una notificacion push va adentro del registro por que es necesario usar el reg para madnar el push
+        Notification.requestPermission().then(result=>{
+            //mensaje del push
+            reg.showNotification('Aplicacion lista y funcionando');
+
+        });
+    });
+
+}
+
+
 $(function(){
-    
     $(document).on('click', '#logIn', function (evt) {
         evt.preventDefault();
            $.ajax({
