@@ -19,7 +19,7 @@ const UsuarioSchema = Schema({
         required: [true, 'la fecha es obligatoria']
     },
     genero:{
-        type:Boolean,
+        type:String,
         require: [true, 'Es necesario el genero'],
         enum:['Femenino','Masculino']
     },

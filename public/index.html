@@ -13,19 +13,19 @@
         </center>
         <div class="form">
           <form class="register-form" action="/api/usuarios" method="post">
-            <input type="text" name="nombre" placeholder="nombre"/>
-            <input type="text" name="apePaterno" placeholder="Apellido paterno"/>
-            <input type="text" name="apeMaterno" placeholder="Apellido materno"/>
+            <input type="text" name="nombre" id="nombre" placeholder="nombre"/>
+            <input type="text" name="apePaterno" id="apePaterno" placeholder="Apellido paterno"/>
+            <input type="text" name="apeMaterno" id="apeMaterno" placeholder="Apellido materno"/>
             <label for="Genero">Genero</label>
-            <select name="genero">
+            <select name="genero" id="genero">
                 <option value="Femenino">Femenino</option> 
                 <option value="Masculino">Masculino</option> 
              </select>
              <label for="Fecha de naciemiento"></label>
-             <input type="date" name="fNaciemto"/>
-             <input type="email" name="correo" placeholder="Correo"/>
-             <input type="password" name="password" placeholder="Contraseña"/>
-            <button type="submit" id="crearUsuario">create</button>
+             <input type="date" name="fNaciemto" id="fNaciemto"/>
+             <input type="email" name="correo" id="correo" placeholder="Correo"/>
+             <input type="password" name="password" id="password" placeholder="Contraseña"/>
+            <button type="button" id="crearUsuario">create</button>
             <p class="message">Already registered? <a href="#">Sign In</a></p>
           </form>
 
