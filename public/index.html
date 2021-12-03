@@ -22,6 +22,7 @@
             <input type="text" name="apeMaterno" id="apeMaterno" placeholder="Apellido materno"/>
             <label for="Genero">Genero</label>
             <select name="genero" id="genero">
+                <option selected>seleccionar genero</option> 
                 <option value="Femenino">Femenino</option> 
                 <option value="Masculino">Masculino</option> 
              </select>
@@ -30,14 +31,14 @@
              <input type="email" name="correo" id="correo" placeholder="Correo"/>
              <input type="password" name="password" id="password" placeholder="Contraseña"/>
             <button type="button" id="crearUsuario">create</button>
-            <p class="message">Already registered? <a href="#">Sign In</a></p>
+            <p class="message">Ya estas registrado? <a href="#">Entrar</a></p>
           </form>
 
           <form class="login-form" action="/api/auth/login" method="post">
             <input type="email" name="correo" id="Lcorreo" placeholder="Correo" required/>
             <input type="password" name="password" id="Lpassword"  placeholder="password" required/>
             <button type="button" id="logIn">login</button>
-            <p class="message">Not registered? <a href="#">Create an account</a></p>
+            <p class="message">Aun no estas registrado? <a href="#">Crear una cuenta</a></p>
           </form>
 
         </div>

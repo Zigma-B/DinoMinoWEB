@@ -6,6 +6,7 @@ const getAll = async()=>{
     let json = await res.data;
     let datos = "";
     let resultado = document.querySelector('#tbody');
+    
     json.usuario.forEach(element => {
       datos+=`
       <tr>
