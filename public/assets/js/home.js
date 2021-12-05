@@ -45,7 +45,7 @@ $(document).ready(function(){
             success:function(res){
 
               console.log(res.r.length)
-              if(res.r.length===""){
+              if(res.r.length!=0){
                 
                 let datos ="";
                 let resultado = document.querySelector('#tbody');
