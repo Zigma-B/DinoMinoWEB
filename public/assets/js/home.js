@@ -1,3 +1,5 @@
+
+//metodo de resivir informacion del servidor con axios 
 $(document).ready(function(){
   //obtener todos los datos
     const getAll = async()=>{
@@ -31,7 +33,7 @@ $(document).ready(function(){
     document.addEventListener("DOMContentLoad", getAll())
 
   
-
+    //manera de resivir datos del servidor con ajax
       $(document).on('click', '#btnBuscar', function(){
         let buscar = $('#buscar').val();   
         $.ajax({
