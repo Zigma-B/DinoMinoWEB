@@ -1,4 +1,5 @@
 const {request, response} = require('express');
+const Topm = require('../models/top');
 
 const Usuario = require('../models/usuario');
 
@@ -25,11 +26,22 @@ const userPointPost = async(req, res)=>{
     })
 
 }
+const Top = async(req, res)=>{
 
+    const {name, score} = req.params;
+    const top = new Topm({name, score});
+
+    res.json({
+        msg:"post working",
+        top
+    })
+
+}
 
 
 
 module.exports={
     userPointGet,
-    userPointPost
+    userPointPost,
+    Top
 }
