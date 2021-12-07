@@ -13,7 +13,11 @@ if ( navigator.serviceWorker ) {
 }
 
 
+
+
+
 $(function(){
+
     $(document).on('click', '#logIn', function (evt) {
         evt.preventDefault();
            $.ajax({
