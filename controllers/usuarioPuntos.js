@@ -30,12 +30,19 @@ const Top = async(req, res)=>{
 
     const {name, score} = req.params;
     const top = new Topm({name, score});
-
+    await top.save();
     res.json({
         msg:"post working",
         top
     })
 
+}
+const getTop = async(req, res) => {
+    const all =  await Topm.find();
+    
+    res.json({
+        all
+    })
 }
 
 
@@ -43,5 +50,5 @@ const Top = async(req, res)=>{
 module.exports={
     userPointGet,
     userPointPost,
-    Top
+    Top,getTop
 }
