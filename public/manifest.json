@@ -2,7 +2,7 @@
 
     "short_name": "Dinomino",
     "name": "Dinomino",
-    "start_url":"index.html",
+    "start_url":"home.html",
     "background_color":"#608e5b",
     "display":"standalone",
     "theme_color":"#608e5b",
