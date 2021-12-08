@@ -34,7 +34,7 @@ const UsuarioSchema = Schema({
     },
     estado: {
         type: Boolean,
-        default: true
+        default: false
     },
     tiempo:{
         type:Number

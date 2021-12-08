@@ -13,7 +13,11 @@ if ( navigator.serviceWorker ) {
 }
 
 
+
+
+
 $(function(){
+
     $(document).on('click', '#logIn', function (evt) {
         evt.preventDefault();
            $.ajax({
@@ -26,7 +30,7 @@ $(function(){
             dataType:'json',
             contentType:'application/json',
             success:function(res){
-               console.log(res);
+               //console.log(res.token);
                if(res){
                    window.location='/home.html';
                }
@@ -44,7 +48,8 @@ $(function(){
             }else{
                 alert('no es un correo valido')
             } 
-          });/*
+          });
+          /*
         $.ajax({
             method: "POST",
             url: "/api/auth/login",
@@ -60,5 +65,18 @@ $(function(){
           });*/
     });
 
+    $(document).on('click', '#logIn', function(){
+        $.ajax({
+            url:"/api/auth/status",
+            method:"post",
+            success:function(res){
+            console.log(res)
+          }
+        });
+
+
+    })
     
 });
+
+
