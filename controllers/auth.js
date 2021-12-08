@@ -52,8 +52,23 @@ const login = async(req, res = response) => {
 
 }
 
+const loginStatus = (req, res)=>{
+    
+    Usuario.findOneAndUpdate({estado:false}, {estado:true}, (err, data)=>{
+        if(err){
+            throw err;
+        }else{
+            data
+        }
+    });
+
+    res.json({
+        msg:"estatus resivido y cambiado "
+    });
+}
 
 
 module.exports = {
-    login
+    login,
+    loginStatus
 }

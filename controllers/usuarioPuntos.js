@@ -26,6 +26,30 @@ const userPointPost = async(req, res)=>{
     })
 
 }
+
+const logOut = async(req, res)=>{
+
+    Usuario.findOneAndUpdate({estado:true}, {estado:false}, (err, data)=>{
+        if(err){
+            throw err;
+        }else{
+            data
+        }
+    });
+
+    res.json({
+        msg: "resivido y estatus actualizado"
+    });
+
+}
+const getStatus = async(req, res)=>{
+    const s = await Usuario.find({estado:true});
+    res.json({
+        s
+    });
+
+
+}
 const Top = async(req, res)=>{
 
     const {name, score} = req.params;
@@ -50,5 +74,7 @@ const getTop = async(req, res) => {
 module.exports={
     userPointGet,
     userPointPost,
+    logOut,
+    getStatus,
     Top,getTop
 }
