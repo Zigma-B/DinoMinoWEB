@@ -31,6 +31,9 @@ const Top = async(req, res)=>{
     const {name, score} = req.params;
     const top = new Topm({name, score});
     await top.save();
+    console.log('====================================');
+    console.log(top);
+    console.log('====================================');
     res.json({
         msg:"post working",
         top
